@@ -1,0 +1,46 @@
+{% include 'header.html' %}
+<title>Login</title>
+</head>
+<body>
+
+    <form action="/login" method="POST" id="form-login" class="form">
+        {% with messages=get_flashed_messages() %}
+            {% if messages %} 
+                {% for message in messages %}
+                    <div class="no-access">
+                        <div class="alert">
+                            <strong>{{message}}</strong>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}   
+        <div class="form-title">
+            <h2>Inicia sesión</h2>
+        </div>
+        <div class="form-input">
+            <label for="username">
+            <input type="text" name="username" id="username" placeholder="Username" class="login-input">
+            <p id="validationUsername">Username can not be empty</p>
+            <p id="lenghtUsername">Userame must have more than 8 characters</p>
+        </div>
+        <div class="form-input">
+            <label for="password">
+            <input type="password" name="password" id="password" placeholder="********" class="login-input">
+            <p id="validationPassword">Password can not be empty</p>
+            <p id="lenghtPassword">Password must have more than 8 characters</p>
+        </div>
+        <div class="form-foot">
+            <div class="form-link">
+                <a href="/register" class="login-link">Create acount</a>
+            </div>
+            <p><input type="checkbox" onclick="see()">Show Password</p>
+            <div class="form-button">
+                <button type="submit" class="login-button">Login</button>
+            </div>
+        </div>
+    </form>
+</body>
+<script src="{{url_for('static', filename="js/valiLog.js")}}" charset="utf-8"></script>
+<script src="{{url_for('static', filename="js/seePass.js")}}" charset="utf-8"></script>
+</html>

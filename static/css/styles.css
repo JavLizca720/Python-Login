@@ -1,0 +1,95 @@
+*{
+
+}
+
+a{
+    text-decoration: none !important;
+}
+
+.principal{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    width: 25rem;
+}
+
+.no-access{
+    background-color: rgb(253, 61, 61);
+    border: 1px solid rgb(150, 150, 150);
+    box-shadow: 7px 7px 7px rgb(223, 158, 158);
+    height: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    opacity: 0.5;
+    text-align: center;
+    width: 25rem;
+}
+
+.alert{
+    margin-top: 1rem;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8rem;
+    width: 30rem;
+}
+
+.form-title{
+    text-align: center;
+}
+
+.form-input{
+    width: 25rem;
+}
+
+.login-input, .register-input{
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 15px;
+    height: 2rem;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    width: 25rem;
+}
+
+.form-link{
+    text-align: center;
+    height: 1rem;
+    margin-top: 1rem;
+}
+
+.reg-form-link{
+    margin-top: 0;
+    height: 2rem;
+    width: 12rem;
+}
+
+.login-link:hover, .register-link:hover{
+    color:rgb(150, 150, 150);
+}
+
+.login-button{
+    height: 3rem;
+    width: 7rem;
+}
+
+.register-button{
+    height: 3rem;
+    margin-top: 0.5rem;
+    width: 7rem;
+}
+
+.form-foot{
+    display: flex;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    flex-direction: row;
+    height: 4rem;
+    justify-content: space-between;
+}

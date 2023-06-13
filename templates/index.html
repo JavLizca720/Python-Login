@@ -1,0 +1,18 @@
+{% include 'header.html' %}
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="principal">
+        {% if 'login' in session: %}
+            <h1>Bienvenid@ {{session["name"]}}</h1>
+            <a href="/close">CERRAR</a>
+        {% endif %}
+
+        {% if not 'login' in session: %}
+            <h1>Bienvenid@ usuario</h1>
+            <a href="/login">Login</a> or <a href="/register">Register</a>
+        {% endif %}
+    </div>
+</body>
+</html>
