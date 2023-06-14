@@ -115,6 +115,30 @@ def storage_user():
         cursor.execute(sql, data)
         conn.commit()
 
+
+    if request.method == 'POST':
+        username=request.form['username']
+        password=request.form['password']
+        _pw_hash = bcrypt.generate_password_hash(password)
+        sql="SELECT id, name, username, password FROM users WHERE username = %s"
+        data=(username,)
+        conn = mysql.connect()
+        cursor=conn.cursor()
+        cursor.execute(sql, data)
+        conn.commit()
+        conn.close()
+        row = cursor.fetchone()   
+
+        user = [row[0], row[1], row[2], row[3]]
+        if username == row[2] and bcrypt.check_password_hash(row[3], password) ==True:
+            session["login"]=True
+            session["id"]=row[0]
+            session["name"]=row[1]
+            session["username"]=row[2]
+            session["password"]=row[3]
+            return redirect('/') 
+
+    
         return redirect('/')
     
 
